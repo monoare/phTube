@@ -169,6 +169,8 @@ const sortByButton = async () => {
     `;
     musicContainer.appendChild(div);
   });
+  const nullPage = document.getElementById("null-page");
+  nullPage.innerHTML = "";
 };
 
 handleCategoryButton();
