@@ -7,11 +7,13 @@ const handleCategoryButton = async () => {
 
   data.data.forEach((buttonId) => {
     const div = document.createElement("div");
+
     div.innerHTML = `
     <button
     onclick="handleLoadMusics('${buttonId.category_id}')"
-    class="btn py-2 px-5 capitalize active:bg-[#FF1F3D] active:text-white"
+    class="btn py-2 px-5 w-3/4 md:w-min text-center capitalize active:bg-[#FF1F3D] active:text-white"
   >
+  
    ${buttonId.category}
   </button>
     `;
@@ -37,7 +39,7 @@ const handleLoadMusics = async (categoryId) => {
     const min = Math.floor((time % 3600) / 60);
 
     div.innerHTML = `
-    <div class="card w-96 bg-base-100 shadow-xl">
+    <div class="card max-w-lg bg-base-100 shadow-xl">
     <figure class="relative">
       <img class="h-60 w-full"
         src="${music.thumbnail}"
@@ -48,7 +50,7 @@ const handleLoadMusics = async (categoryId) => {
       music.others.posted_date ? `${hr} hrs` : ""
     } ${music.others.posted_date ? `${min} min ago` : ""}</p>
     </figure>
-    <div class="card-body">
+    <div class="card-body max-w-lg">
         <div class="avatar mr-4 flex">
             <div class="w-12 rounded-full mr-4">
                 <img src='${music.authors[0].profile_picture}' />
@@ -112,24 +114,24 @@ const sortByButton = async () => {
     if (music.others) {
       const dat = music.others.views;
       const num = parseFloat(dat.slice(0, -1));
-      arr.push({ music, num }); // Store both the music data and the parsed number
+      arr.push({ music, num });
     }
   });
-  arr.sort((a, b) => b.num - a.num); // Sort the array of objects by the parsed number
+  arr.sort((a, b) => b.num - a.num);
 
   console.log(arr);
   const musicContainer = document.getElementById("music-container");
   musicContainer.innerHTML = "";
 
   arr.forEach((item) => {
-    const music = item.music; // Get the music data
+    const music = item.music;
     const time = music.others.posted_date;
     const hr = Math.floor(time / 3600);
     const min = Math.floor((time % 3600) / 60);
 
     const div = document.createElement("div");
     div.innerHTML = `
-    <div class="card w-96 bg-base-100 shadow-xl">
+    <div class="card max-w-lg bg-base-100 shadow-xl">
     <figure class="relative">
       <img class="h-60 w-full"
         src="${music.thumbnail}"
@@ -140,7 +142,7 @@ const sortByButton = async () => {
       music.others.posted_date ? `${hr} hrs` : ""
     } ${music.others.posted_date ? `${min} min ago` : ""}</p>
     </figure>
-    <div class="card-body">
+    <div class="card-body max-w-lg">
         <div class="avatar mr-4 flex">
             <div class="w-12 rounded-full mr-4">
                 <img src='${music.authors[0].profile_picture}' />

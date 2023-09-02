@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog</title>
+
+    <!-- Tailwind and DaisyUI CDN link -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@3.6.4/dist/full.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="container mx-auto">
+    <header>
+      <h1 class="text-6xl font-bold text-center mt-20 mb-36 text-cyan-400">
+        Frequently Ask Questions
+      </h1>
+    </header>
+    <div class="w-full mx-auto">
+      <div class="flex items-center">
+        <img class="w-24 mr-8" src="images/JavaScript-Blog-Cover.png" alt="" />
+        <p class="text-4xl font-semibold text-violet-900">
+          Discuss the scope of var, let, and const
+        </p>
+      </div>
+      <div class="mt-6 text-xl">
+        <p class="mb-4">
+          In JavaScript, var, let, and const are used to declare variables, but
+          they differ in terms of their scope, hoisting behavior, and
+          mutability. Understanding their scope is essential for writing clean
+          and maintainable code. Let's discuss the scope of each of these
+          variable declarations:
+        </p>
+        <ol class="list-decimal font-semibold ml-4">
+          <!-- var -->
+          <li>
+            <strong>Var:</strong>
+            <p class="my-4">
+              <strong>Function-scoped:</strong> Variables declared with var are
+              function-scoped. This means they are only accessible within the
+              function in which they are declared, or globally if declared
+              outside of any function.
+            </p>
+            <p>
+              <strong>Hoisting:</strong> Variables declared with var are hoisted
+              to the top of their containing function or the global scope, which
+              means the variable declaration is moved to the top during
+              compilation, but the initialization remains in place.
+            </p>
+            <p class="my-4">
+              <strong>Reassignment:</strong> 'var' variables can be reassigned
+              and updated.
+            </p>
+            <p class="mt-4">Example:</p>
+            <img class="my-4" src="images/j1.JPG" alt="" />
+          </li>
+
+          <!-- Let -->
+          <li>
+            <strong>let:</strong>
+            <p class="my-4">
+              <strong>Block-Scoped:</strong> Variables declared with let are
+              block-scoped. They are accessible only within the block (e.g.,
+              inside loops, conditionals, or functions) where they are defined.
+            </p>
+            <p>
+              <strong>Hoisting:</strong> Like var, let is also hoisted, but it
+              is not initialized with a value. This results in a "temporal dead
+              zone" where you cannot access the variable before its declaration
+              in the code.
+            </p>
+            <p class="my-4">
+              <strong>Reassignment:</strong> let variables can be reassigned,
+              but their value can change within the block scope.
+            </p>
+            <p class="mt-4">Example:</p>
+            <img class="my-4" src="images/j2.JPG" alt="" />
+          </li>
+
+          <!-- const -->
+          <li>
+            <strong>const:</strong>
+            <p class="my-4">
+              <strong>Block-Scoped:</strong> Like let, variables declared with
+              const are block-scoped and only accessible within the block in
+              which they are defined.
+            </p>
+            <p>
+              <strong>Hoisting:</strong> Similar to let, const is hoisted but
+              not initialized with a value, resulting in a temporal dead zone.
+            </p>
+            <p class="my-4">
+              <strong>Immutable:</strong> Variables declared with const cannot
+              be reassigned after their initial assignment. However, the value
+              they refer to can be mutated if it is an object or an array.
+            </p>
+            <p class="mt-4">Example:</p>
+            <img class="my-4" src="images/j3.JPG" alt="" />
+          </li>
+        </ol>
+        <p class="mb-20 mt-8">
+          In modern JavaScript development, it's recommended to use let for
+          variables that may change their value and const for variables that
+          should remain constant. var is used less frequently due to its
+          function-scoped nature and potential issues with hoisting and
+          unintended global variables.
+        </p>
+      </div>
+
+      <!-- Question-2 -->
+      <div class="flex items-center">
+        <img class="w-24 mr-8" src="images/JavaScript-Blog-Cover.png" alt="" />
+        <p class="text-4xl font-semibold text-violet-900">
+          Tell us the use cases of null and undefined
+        </p>
+      </div>
+      <div class="mt-6 text-xl">
+        <p class="mb-4">
+          In JavaScript, null and undefined are two distinct values used to
+          represent missing or absent data, but they have slightly different use
+          cases:
+        </p>
+        <ol class="list-decimal font-semibold ml-4">
+          <!-- Null -->
+          <li>
+            <strong>null:</strong>
+            <p class="my-4">
+              <strong>Intentional Absence:</strong> The primary use case for
+              null is to explicitly indicate that a variable or object property
+              intentionally has no value or that it is empty. It is a
+              programmer-defined value to signify emptiness.
+            </p>
+            <p>
+              <strong>As a Placeholder:</strong> You might use null as a
+              placeholder value when you plan to assign a meaningful value to a
+              variable or property later in your code.
+            </p>
+            <p class="my-4">
+              <strong>Comparisons:</strong> You can use null in conditional
+              statements or comparisons to check if a variable or property has
+              been intentionally set to "nothing."
+            </p>
+            <p class="mt-4">Example:</p>
+            <img class="my-4" src="images/null.JPG" alt="" />
+          </li>
+
+          <!-- undefined -->
+          <li>
+            <strong>undefined:</strong>
+            <p class="my-4">
+              <strong>Default Value:</strong> When a variable or object property
+              is declared but not initialized, it is automatically assigned the
+              value undefined. It represents the absence of a value that was
+              never set.
+            </p>
+            <p>
+              <strong>Function Parameters:</strong> If a function is called with
+              fewer arguments than declared in its parameters, the missing
+              parameters are set to undefined.
+            </p>
+            <p class="my-4">
+              <strong>Property Access:</strong> lf you try to access an object
+              property that does not exist, you will get undefined.
+            </p>
+            <p class="mt-4">Example:</p>
+            <img class="my-4" src="images/undefined.JPG" alt="" />
+          </li>
+        </ol>
+        <p class="mb-20 mt-8">
+          In summary, null is typically used when you want to explicitly
+          indicate the absence of a value for a variable or property, whereas
+          undefined is often automatically assigned to variables or properties
+          when they haven't been assigned a value. It's essential to understand
+          these distinctions to write clean and predictable JavaScript code.
+        </p>
+      </div>
+
+      <!-- Question-3 -->
+
+      <div class="flex items-center">
+        <img class="w-24 mr-8" src="images/JavaScript-Blog-Cover.png" alt="" />
+        <p class="text-4xl font-semibold text-violet-900">
+          What do you mean by REST API?
+        </p>
+      </div>
+      <div class="mt-6 text-xl">
+        <p class="mb-4">
+          REST API stands for Representational State Transfer Application
+          Programming Interface. It is a set of architectural principles and
+          constraints for designing networked applications. REST is not a
+          specific technology or protocol but rather a style of designing web
+          services and APIs. RESTful APIs are designed to be simple, scalable,
+          and stateless, making them widely used for building web services and
+          APIs on the internet.
+        </p>
+        <p>Key characteristics and principles of REST APIs include:</p>
+        <ol class="list-disc font-semibold ml-4">
+          <!-- 1 -->
+          <li>
+            <p class="my-4">
+              <strong>Statelessness:</strong> Each request from a client to a
+              server must contain all the information needed to understand and
+              process the request. The server should not rely on any previous
+              requests or shared state. This simplifies server design and
+              scalability.
+            </p>
+          </li>
+          <!-- 2 -->
+          <li>
+            <p>
+              <strong>Resources:</strong> In a REST API, resources are the key
+              abstractions. Resources can be thought of as any data or entity
+              that can be manipulated. Resources are identified by unique URIs
+              (Uniform Resource Identifiers).
+            </p>
+          </li>
+          <!-- 3 -->
+          <li>
+            <p class="my-4">
+              <strong>HTTP Methods:</strong> RESTful APIs use standard HTTP
+              methods (GET, POST, PUT, DELETE, etc.) to perform CRUD (Create,
+              Read, Update, Delete) operations on resources. For example, GET is
+              used to retrieve data, POST to create new resources, PUT to update
+              resources, and DELETE to remove resources.
+            </p>
+          </li>
+          <!-- 4 -->
+          <li>
+            <p>
+              <strong>Representation:</strong> Resources can have multiple
+              representations (e.g., JSON, XML, HTML) to describe their state.
+              Clients can specify the desired representation using the Accept
+              header, and servers can respond with the appropriate format.
+            </p>
+          </li>
+          <!-- 5 -->
+          <li>
+            <p class="my-4">
+              <strong>Stateless Communication:</strong> Each request between
+              client and server must be self-contained. Servers should not store
+              any client state between requests. This makes REST APIs highly
+              scalable and allows for easy load balancing.
+            </p>
+          </li>
+          <!-- 6 -->
+          <li>
+            <p>
+              <strong>Uniform Interface:</strong> REST APIs have a consistent
+              and uniform interface, which simplifies both client and server
+              implementations. This uniformity is achieved through the use of
+              HTTP methods and status codes.
+            </p>
+          </li>
+          <!-- 7 -->
+          <li>
+            <p class="my-4">
+              <strong>Client-Server Architecture:</strong> The client and server
+              are separate entities that communicate over a network. This
+              separation allows for better scalability and flexibility.
+            </p>
+          </li>
+          <!-- 8 -->
+          <li>
+            <p>
+              <strong>Layered System:</strong> REST allows for a layered system
+              architecture where each component (e.g., load balancers, caching,
+              security) is separate and can be modified or replaced without
+              affecting the overall system.
+            </p>
+          </li>
+        </ol>
+        <p class="mb-10 mt-8">
+          RESTful APIs are commonly used for web services that serve data over
+          the internet. They are popular due to their simplicity, scalability,
+          and compatibility with the HTTP protocol, making them accessible to a
+          wide range of clients and platforms. REST has become the dominant
+          architectural style for building APIs on the web.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
