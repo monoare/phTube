@@ -11,7 +11,7 @@ const handleCategoryButton = async () => {
     div.innerHTML = `
     <button
     onclick="handleLoadMusics('${buttonId.category_id}')"
-    class="btn py-2 px-5 w-3/4 md:w-min text-center capitalize active:bg-[#FF1F3D] active:text-white"
+    class="btn py-2 px-5 md:w-min text-center capitalize active:bg-[#FF1F3D] active:text-white"
   >
   
    ${buttonId.category}
