@@ -7,32 +7,28 @@ const handleCategoryButton = async () => {
 
   data.data.forEach((buttonId) => {
     const div = document.createElement("div");
-
     div.innerHTML = `
     <button
     onclick="handleLoadMusics('${buttonId.category_id}')"
     class="btn py-2 px-5 md:w-min text-center capitalize active:bg-[#FF1F3D] active:text-white"
   >
-  
-   ${buttonId.category}
+  <div class="inner-button">${buttonId.category}</div>
   </button>
     `;
     buttonContainer.appendChild(div);
   });
 };
 
+// Load music card based on category
 const handleLoadMusics = async (categoryId) => {
-  console.log(categoryId);
   const response = await fetch(
     `https://openapi.programming-hero.com/api/videos/category/${categoryId}`
   );
   const data = await response.json();
   const musicContainer = document.getElementById("music-container");
-
   musicContainer.innerHTML = "";
 
   data.data.forEach((music) => {
-    // console.log(music);
     const div = document.createElement("div");
     const time = music.others.posted_date;
     const hr = Math.floor(time / 3600);
@@ -79,8 +75,7 @@ const handleLoadMusics = async (categoryId) => {
           music.others?.views ? `${music.others.views} views` : ""
         }</p>
     </div>
-  </div>
-    
+  </div> 
     `;
     musicContainer.appendChild(div);
   });
@@ -98,6 +93,7 @@ const handleLoadMusics = async (categoryId) => {
   }
 };
 
+// Sort by view function and fetch data
 const sortByButton = async () => {
   const res = await fetch(
     "https://openapi.programming-hero.com/api/videos/categories"
@@ -118,8 +114,6 @@ const sortByButton = async () => {
     }
   });
   arr.sort((a, b) => b.num - a.num);
-
-  console.log(arr);
   const musicContainer = document.getElementById("music-container");
   musicContainer.innerHTML = "";
 
@@ -173,9 +167,9 @@ const sortByButton = async () => {
     </div>
   </div>
     `;
-
     musicContainer.appendChild(div);
   });
 };
+
 handleCategoryButton();
 handleLoadMusics(1000);
